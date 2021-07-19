@@ -1,4 +1,7 @@
+import sorting.impl.HeapSort;
+import sorting.impl.InsertionSort;
 import sorting.impl.QuickSort;
+import sorting.impl.SelectionSort;
 import util.Utils;
 
 public class AlgorithmApplication {
@@ -8,10 +11,12 @@ public class AlgorithmApplication {
         Utils.print(Utils.arr);
 
 //        BubbleSort bubbleSort = new BubbleSort();
-//        bubbleSort.sort(Utils.arr);
+//        QuickSort sortAlgorithm = new QuickSort();
+//        InsertionSort sortAlgorithm = new InsertionSort();
+//        SelectionSort sortAlgorithm = new SelectionSort();
 
-        QuickSort quickSort = new QuickSort();
-        quickSort.sort(Utils.arr);
+        HeapSort sortAlgorithm = new HeapSort();
+        sortAlgorithm.sort(Utils.arr);
 
         Utils.print(Utils.arr);
     }

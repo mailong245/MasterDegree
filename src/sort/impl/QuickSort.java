@@ -1,6 +1,6 @@
-package sorting.impl;
+package sort.impl;
 
-import sorting.Sort;
+import sort.Sort;
 
 public class QuickSort implements Sort {
 

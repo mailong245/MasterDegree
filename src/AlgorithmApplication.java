@@ -1,32 +1,59 @@
-import sorting.impl.HeapSort;
+import search.Search;
+import search.impl.LinearSearch;
+import sort.Sort;
+import sort.impl.MergeSort;
 import util.Utils;
 
 public class AlgorithmApplication {
 
-  public static void main(String[] args) {
-    System.out.print("Array: ");
-    Utils.print(Utils.arr);
+    public static void main(String[] args) {
+        sort();
+        search();
 
-//        BubbleSort bubbleSort = new BubbleSort();
-//        QuickSort sortAlgorithm = new QuickSort();
-//        InsertionSort sortAlgorithm = new InsertionSort();
-//        SelectionSort sortAlgorithm = new SelectionSort();
-
-    HeapSort sortAlgorithm = new HeapSort();
-    sortAlgorithm.sort(Utils.arr);
-
-    Utils.print(Utils.arr);
-
-    int result = fibo(7);
-    System.out.println("Fibo: " + result);
-  }
-
-  private static int fibo(int n) {
-    if (n <= 2) {
-      return 1;
-    } else {
-      return fibo(n - 1) + fibo(n - 2);
+        int result = fibo(7);
+        System.out.println("Fibo: " + result);
     }
-  }
+
+    private static void search() {
+        System.out.println("======= SEARCH =======");
+        System.out.print("Array: ");
+        Utils.print(Utils.arr);
+
+        Search search;
+        search = new LinearSearch();
+
+        int result = search.search(Utils.arr, 20);
+        System.out.println("Search result: " + result);
+    }
+
+    private static void sort() {
+        System.out.println("======= SORT =======");
+        Sort sortAlgorithm;
+
+        System.out.print("Array: ");
+        Utils.print(Utils.arr);
+
+//        sortAlgorithm = new BubbleSort();
+//        sortAlgorithm = new QuickSort();
+//        sortAlgorithm = new InsertionSort();
+//        sortAlgorithm = new SelectionSort();
+//        sortAlgorithm = new HeapSort();
+        sortAlgorithm = new MergeSort();
+
+        sortAlgorithm.sort(Utils.arr);
+
+        Utils.print(Utils.arr);
+
+
+    }
+
+
+    private static int fibo(int n) {
+        if (n <= 2) {
+            return 1;
+        } else {
+            return fibo(n - 1) + fibo(n - 2);
+        }
+    }
 
 }

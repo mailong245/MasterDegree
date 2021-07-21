@@ -1,4 +1,5 @@
 import search.Search;
+import search.impl.BinarySearch;
 import search.impl.LinearSearch;
 import sort.Sort;
 import sort.impl.MergeSort;
@@ -20,9 +21,10 @@ public class AlgorithmApplication {
         Utils.print(Utils.arr);
 
         Search search;
-        search = new LinearSearch();
+//        search = new LinearSearch();
+        search = new BinarySearch();
 
-        int result = search.search(Utils.arr, 20);
+        int result = search.search(Utils.arr, 5);
         System.out.println("Search result: " + result);
     }
 

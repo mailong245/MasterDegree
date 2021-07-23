@@ -2,6 +2,9 @@ package sort.impl;
 
 import sort.Sort;
 
+/**
+ * Sắp xếp trộn
+ */
 public class MergeSort implements Sort {
 
     private void merge(int[] a, int l, int m, int r) {

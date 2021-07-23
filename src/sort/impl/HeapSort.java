@@ -2,6 +2,9 @@ package sort.impl;
 
 import sort.Sort;
 
+/**
+ * Sắp xếp vun đống
+ */
 public class HeapSort implements Sort {
 
     private void heapify(int[] a, int n, int i) {

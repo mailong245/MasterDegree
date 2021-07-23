@@ -2,6 +2,9 @@ package sort.impl;
 
 import sort.Sort;
 
+/**
+ * Sắp xếp chèn
+ */
 public class InsertionSort implements Sort {
 
     @Override

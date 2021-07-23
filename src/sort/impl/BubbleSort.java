@@ -2,6 +2,9 @@ package sort.impl;
 
 import sort.Sort;
 
+/**
+ * Sắp xếp nổi bọt
+ */
 public class BubbleSort implements Sort {
     @Override
     public void sort(int[] a) {

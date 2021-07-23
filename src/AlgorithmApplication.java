@@ -45,10 +45,7 @@ public class AlgorithmApplication {
         sortAlgorithm.sort(Utils.arr);
 
         Utils.print(Utils.arr);
-
-
     }
-
 
     private static int fibo(int n) {
         if (n <= 2) {

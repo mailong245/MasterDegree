@@ -2,6 +2,9 @@ package sort.impl;
 
 import sort.Sort;
 
+/**
+ * Sắp xếp nhanh
+ */
 public class QuickSort implements Sort {
 
     @Override

@@ -1,58 +1,95 @@
+import hashtable.Employee;
+import hashtable.SimpleHashtable;
 import search.Search;
 import search.impl.BinarySearch;
-import search.impl.LinearSearch;
 import sort.Sort;
 import sort.impl.MergeSort;
 import util.Utils;
 
+@SuppressWarnings({"java:S1854", "java:S1192", "java:S106", "java:S125", "java:S1481"})
 public class AlgorithmApplication {
 
-    public static void main(String[] args) {
-        sort();
-        search();
+  public static void main(String[] args) {
+    sort();
+    search();
+    hashTable();
+  }
 
-        int result = fibo(7);
-        System.out.println("Fibo: " + result);
-    }
+  /**
+   * Hashtable algorithm
+   */
+  private static void hashTable() {
+    Employee janeJones = new Employee("Jane", "Jones", 123);
+    Employee johnDoe = new Employee("John", "Doe", 4567);
+    Employee marySmith = new Employee("Mary", "Smith", 22);
+    Employee mikeWilson = new Employee("Mike", "Wilson", 3245);
+    Employee billEnd = new Employee("Bill", "End", 78);
 
-    private static void search() {
-        System.out.println("======= SEARCH =======");
-        System.out.print("Array: ");
-        Utils.print(Utils.arr);
+    SimpleHashtable ht = new SimpleHashtable();
+    ht.put("Jane", janeJones);
+    ht.put("John", johnDoe);
+    ht.put("Mary", mikeWilson);
+    ht.put("Mike", marySmith);
 
-        Search search;
+    ht.printHashtable();
+
+    System.out.println("Retrieve key Wilson: " + ht.get("Wilson"));
+    System.out.println("Retrieve key Smith: " + ht.get("Smith"));
+
+    ht.remove("Wilson");
+    ht.remove("Jones");
+    ht.printHashtable();
+
+    System.out.println("Retrieve key Smith: " + ht.get("Smith"));
+  }
+
+  /**
+   * Search algorithm
+   */
+  private static void search() {
+    System.out.println("======= SEARCH =======");
+    System.out.print("Array: ");
+    Utils.print(Utils.arr);
+
+    Search search;
 //        search = new LinearSearch();
-        search = new BinarySearch();
+    search = new BinarySearch();
 
-        int result = search.search(Utils.arr, 5);
-        System.out.println("Search result: " + result);
-    }
+    int result = search.search(Utils.arr, 5);
+    System.out.println("Search result: " + result);
+  }
 
-    private static void sort() {
-        System.out.println("======= SORT =======");
-        Sort sortAlgorithm;
+  /**
+   * Sort algorithm
+   */
+  private static void sort() {
+    System.out.println("======= SORT =======");
+    Sort sortAlgorithm;
 
-        System.out.print("Array: ");
-        Utils.print(Utils.arr);
+    System.out.print("Array: ");
+    Utils.print(Utils.arr);
 
 //        sortAlgorithm = new BubbleSort();
 //        sortAlgorithm = new QuickSort();
 //        sortAlgorithm = new InsertionSort();
 //        sortAlgorithm = new SelectionSort();
 //        sortAlgorithm = new HeapSort();
-        sortAlgorithm = new MergeSort();
+    sortAlgorithm = new MergeSort();
 
-        sortAlgorithm.sort(Utils.arr);
+    sortAlgorithm.sort(Utils.arr);
 
-        Utils.print(Utils.arr);
+    Utils.print(Utils.arr);
+  }
+
+  /**
+   * Recursive example
+   */
+  private static int fibo(int n) {
+    if (n <= 2) {
+      return 1;
+    } else {
+      return fibo(n - 1) + fibo(n - 2);
     }
-
-    private static int fibo(int n) {
-        if (n <= 2) {
-            return 1;
-        } else {
-            return fibo(n - 1) + fibo(n - 2);
-        }
-    }
+  }
 
 }

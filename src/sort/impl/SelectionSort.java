@@ -16,7 +16,6 @@ public class SelectionSort implements Sort {
             for (int j = i + 1; j < a.length; j++) {
                 if (a[j] < a[min]) {
                     min = j;
-                    continue;
                 }
             }
             int temp = a[i];

@@ -4,6 +4,7 @@ import search.Search;
 import search.impl.BinarySearch;
 import sort.Sort;
 import sort.impl.MergeSort;
+import sort.impl.SelectionSort;
 import util.Utils;
 
 @SuppressWarnings({"java:S1854", "java:S1192", "java:S106", "java:S125", "java:S1481"})
@@ -72,9 +73,9 @@ public class AlgorithmApplication {
 //        sortAlgorithm = new BubbleSort();
 //        sortAlgorithm = new QuickSort();
 //        sortAlgorithm = new InsertionSort();
-//        sortAlgorithm = new SelectionSort();
+        sortAlgorithm = new SelectionSort();
 //        sortAlgorithm = new HeapSort();
-    sortAlgorithm = new MergeSort();
+//    sortAlgorithm = new MergeSort();
 
     sortAlgorithm.sort(Utils.arr);
 
